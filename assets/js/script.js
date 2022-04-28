@@ -8,6 +8,8 @@ const question4 = document.querySelector("#question4");
 const question5 = document.querySelector("#question5");
 const quiz_end = document.querySelector(".quiz-end");
 
+
+
 var timerEl = document.getElementById('timer');
 
 to_q_1.addEventListener( 'click', () => {
