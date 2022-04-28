@@ -5,6 +5,7 @@
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="./assets/css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link href="https://fonts.googleapis.com/css2?family=Economica:wght@700&family=Voltaire&display=swap" rel="stylesheet">
         <title>Coding Quiz</title>
     </head>
@@ -12,15 +13,20 @@
 <body>
     
     <div class="start-quiz">
-        <button>Start Quiz</button>
+        <button id="#start-quiz">Start Quiz</button>
+    </div>
+    
+    <div class="timer">
+        <div class="time-txt">Time Left</div>
+        <div class="time" id="timer"></div>
     </div>
     
     <div class="info">
         <div class="info-box">
-            <p class="info-title">You are about to begin the Coding Quiz!</p>
+            <p class="title">You are about to begin the Coding Quiz!</p>
             <ol class="info-ol">
-                <li> You will answer 10 multiple choice questions total. </li>
-                <li> You will be given a total of <span>two minutes</span> to complete the quiz. </li>
+                <li> You will answer 5 multiple choice questions total. </li>
+                <li> You will be given a total of <span>one minute</span> to complete the quiz. </li>
                 <li> Each time you answer a question incorrectly, 15 seconds will be deducted from the clock. </li>
                 <li> Complete the quiz and compare your score! </li>
             </ol>
@@ -29,13 +35,86 @@
         </div>
     </div>
 
-    <div class="questions">
-
+    <div class="questions" id="question1">
+        <div class="questions-box">
+            <div class="que">Commonly used date types do <strong>NOT</strong>include</div>
+            <ul class="questions-ul">
+                <li class="q1"> Strings </li>
+                <li class="q2"> Booleans </li>
+                <li class="q3"> Alerts </li>
+                <li class="q4"> Numbers </li>
+            </ol>
+            <button class="cont-btn"> Next Question </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
     </div>
 
-    <div class="answers">
-
+    <div class="questions" id="question2">
+        <div class="questions-box">
+            <div class="que">The condition in an if / else statement is enclosed with _______.</div>
+            <ul class="questions-ul">
+                <li class="q1"> Quotes </li>
+                <li class="q2"> Curly Brackets </li>
+                <li class="q3"> Parentheses </li>
+                <li class="q4"> Square Brackets </li>
+            </ol>
+            <button class="cont-btn"> Next Question </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
     </div>
+
+    <div class="questions" id="question3">
+        <div class="questions-box">
+            <div class="que"> Arrays in JavaScript can be used to store ______. </div>
+            <ul class="questions-ul">
+                <li class="q1"> Numbers and Strings</li>
+                <li class="q2"> Booleans </li>
+                <li class="q3"> Other Arrays </li>
+                <li class="q4"> All of the Above </li>
+            </ol>
+            <button class="cont-btn"> Next Question </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
+    </div>
+
+    <div class="questions" id="question4">
+        <div class="questions-box">
+            <div class="que">A very useful tool for debugging for printing content to the debugger is _______. </div>
+            <ul class="questions-ul">
+                <li class="q1"> JavaScript </li>
+                <li class="q2"> Terminal/Bash </li>
+                <li class="q3"> console.log </li>
+                <li class="q4"> for loops </li>
+            </ol>
+            <button class="cont-btn"> Next Question </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
+    </div>
+
+    <div class="questions" id="question5">
+        <div class="questions-box">
+            <div class="que"> String values must be enclosed with ______ when being assigned to variables </div>
+            <ul class="questions-ul">
+                <li class="q1"> Commas </li>
+                <li class="q2"> Curly Brackets </li>
+                <li class="q3"> Quotes </li>
+                <li class="q4"> Parentheses </li>
+            </ol>
+            <button class="cont-btn"> Next Question </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
+    </div>
+
+    <div class="quiz-end">
+        <div class="end-box">
+            <div class="title"></div>You have completed the Coding Quiz!</div>
+            <div class="score">You got <p>5</p> out of <p>5</p></div>
+            <button class="cont-btn"> Save Score </button>
+            <button class="cont-btn"> Quit </button>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
