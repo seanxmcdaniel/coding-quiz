@@ -60,6 +60,7 @@ body {
 .questions,
 .quiz-end {
     height: 100vh;
+    z-index: 5;
     display: none;
     justify-content: center;
     align-items: center;
