@@ -7,17 +7,26 @@ const question3 = document.querySelector("#question3");
 const question4 = document.querySelector("#question4");
 const question5 = document.querySelector("#question5");
 const quiz_end = document.querySelector(".quiz-end");
-const wrong = document.querySelector(".wrong")
-const correct = document.querySelector(".correct")
+const wrong = document.querySelectorAll(".wrong")
+const correct = document.querySelectorAll(".correct")
 
+wrong.forEach(function(wrong) {
+    
+    wrong.addEventListener('click', function() {
+      wrong.style.backgroundColor = 'red';
+    console.log("Wrong")
 
-wrong.onclick = function() {
-    wrong.style.backgroundColor = "red";
-}
+    })
+  })
 
-correct.onclick = function() {
-    correct.style.backgroundColor = "green";
-} 
+correct.forEach(function(correct) {
+
+    correct.addEventListener('click', function() {
+      correct.style.backgroundColor = 'green';
+    console.log("Correct")
+    })
+  })
+
 
 start_quiz.addEventListener("click", () => {
 if(info.style.display === 'none') {
@@ -108,6 +117,6 @@ to_q_1.addEventListener( 'click', () => {
         clearInterval(timeInterval);
       }
     }, 1000);
-});
+}); 
 
   
