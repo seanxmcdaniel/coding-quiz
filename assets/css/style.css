@@ -34,7 +34,7 @@ body {
     transition: 150ms;
 }
 
-.cont-btn {
+.cont-btn, .quit-btn {
     color:rgb(26, 118, 26);
     border: none;
     padding: 4px 8px;
@@ -42,9 +42,16 @@ body {
     cursor: pointer;
     font-size: 30px;
     background-color: rgb(159, 214, 159);
+    user-select: none;
 }
 
 .cont-btn:hover {
+    color:rgb(159, 214, 159);
+    background-color: rgb(26, 118, 26);
+    transition: 150ms;
+}
+
+.quit-btn:hover {
     color:rgb(159, 214, 159);
     background-color: rgb(26, 118, 26);
     transition: 150ms;
@@ -100,15 +107,20 @@ body {
     padding: 30px;
     color:rgb(16, 67, 16);
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
-.questions-ul li {
+.questions-ul button {
     background-color: lightgrey;
     padding: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
 }
 
-.questions-ul li:hover {
-    background-color: rgb(159, 214, 159);
+.questions-ul button:hover {
+    background-color: gray;
 }
 
 .timer {
@@ -121,33 +133,15 @@ body {
 
 .score {
     font-size: 30px;
-    display: none;
+    display: flex;
     justify-content: center;
 }
 
-
-
-
-
-
-
-/* #question1 {
-    display: none;
+/* .questions-ul .wrong:active {
+    background-color: rgb(255, 172, 172);
+    color: rgb(233, 0, 0);
 }
-
-#question2 {
-    display: none;
+.questions-ul .correct:active {
+    background-color: rgb(16, 67, 16);
+    color:rgb(159, 214, 159);
 }
-
-#question3 {
-    display: none;
-}
-
-#question4 {
-    display: none;
-}
-
-#question5 {
-    display: none;
-}
-

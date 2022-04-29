@@ -7,28 +7,22 @@ const question3 = document.querySelector("#question3");
 const question4 = document.querySelector("#question4");
 const question5 = document.querySelector("#question5");
 const quiz_end = document.querySelector(".quiz-end");
+const wrong = document.querySelector(".wrong")
+const correct = document.querySelector(".correct")
 
 
+wrong.onclick = function() {
+    wrong.style.backgroundColor = "red";
+}
 
-var timerEl = document.getElementById('timer');
-
-to_q_1.addEventListener( 'click', () => {
-    var timeLeft = 60;
-    
-    var timeInterval = setInterval(function () {
-      if (timeLeft > 1) {
-        timerEl.textContent = timeLeft;
-        timeLeft--;
-      } else {
-        timerEl.textContent = '';
-        clearInterval(timeInterval);
-      }
-    }, 1000);
-});
+correct.onclick = function() {
+    correct.style.backgroundColor = "green";
+} 
 
 start_quiz.addEventListener("click", () => {
 if(info.style.display === 'none') {
     info.style.display = 'flex';
+    start_quiz.style.display = 'none';
 } else {
     info.style.display = 'none';
 }
@@ -49,8 +43,8 @@ const to_q_2 = document.querySelector("#to-q-2");
 
 to_q_2.addEventListener("click", () => {
 if(question2.style.display === 'none') {
-    question1.style.display = 'none';
     question2.style.display = 'flex';
+    question1.style.display = 'none';
 } else {
     question2.style.display = 'none';
 }
@@ -72,7 +66,7 @@ const to_q_4 = document.querySelector("#to-q-4");
 to_q_4.addEventListener("click", () => {
 if(question4.style.display === 'none') {
     question4.style.display = 'flex';
-    question2.style.display = 'none';
+    question3.style.display = 'none';
 } else {
     question4.style.display = 'none';
 }
@@ -92,13 +86,28 @@ if(question5.style.display === 'none') {
 const finishquiz = document.querySelector("#finish-quiz");
 
 finishquiz.addEventListener("click", () => {
-if(finishquiz.style.display === 'none') {
-    finishquiz.style.display = 'flex';
+if(quiz_end.style.display === 'none') {
+    quiz_end.style.display = 'flex';
     question5.style.display = 'none';
 } else {
-    finishquiz.style.display = 'none';
+    quiz_end.style.display = 'none';
 }
 });
 
+var timerEl = document.getElementById('timer');
+
+to_q_1.addEventListener( 'click', () => {
+    var timeLeft = 60;
+    
+    var timeInterval = setInterval(function () {
+      if (timeLeft > 1) {
+        timerEl.textContent = timeLeft;
+        timeLeft--;
+      } else {
+        timerEl.textContent = '';
+        clearInterval(timeInterval);
+      }
+    }, 1000);
+});
 
   
