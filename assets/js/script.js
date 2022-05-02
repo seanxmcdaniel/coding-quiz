@@ -13,24 +13,34 @@ const to_q_4 = document.querySelector("#to-q-4");
 const to_q_3 = document.querySelector("#to-q-3");
 const to_q_2 = document.querySelector("#to-q-2");
 const to_q_1 = document.querySelector("#to-q-1");
+const try_again = document.querySelector(".try-again")
 
+const quit = document.querySelectorAll(".quit")
 const wrong = document.querySelectorAll(".wrong")
 const correct = document.querySelectorAll(".correct")
 
+var scoreEl = document.getElementById('score');
 var timerEl = document.getElementById('timer');
 var timeLeft = 60;
 var i = 15
+var score = 0
 
+//Function to set timer text depending on answer clicked and to set the score based on correct answers
+//clicked by the end of the quiz. 
+function setScoreText() {
+    scoreEl.textContent = score;
+}
 function setTimerText() {
     timerEl.textContent = timeLeft;
 }
 
+// Functions to make the incorrect answers red and the correct answers green
+// and also to subtract 15 seconds from timer on each wrong answer. 
 wrong.forEach(function(wrong) {
-    
     wrong.addEventListener('click', function() {
       wrong.style.backgroundColor = 'red';
       if (timeLeft > 0) {
-        timeLeft - i;
+        timeLeft -= i;
         setTimerText();
       }
     console.log("Wrong")
@@ -38,28 +48,24 @@ wrong.forEach(function(wrong) {
   })
 
 correct.forEach(function(correct) {
-
     correct.addEventListener('click', function() {
       correct.style.backgroundColor = 'green';
-    console.log("Correct")
+      score++;
+    console.log(score)
     })
   })
 
 start_quiz.addEventListener("click", () => {
-if(info.style.display === 'none') {
     info.style.display = 'flex';
     start_quiz.style.display = 'none';
-} else {
-    info.style.display = 'none';
-}
 });
-
 to_q_1.addEventListener( 'click', () => {
-    
     var timeInterval = setInterval(function () {
       if (timeLeft > 1) {
         timerEl.textContent = timeLeft;
         timeLeft--;
+      } else if (timeLeft <= 0) {
+        try_again.style.display = "block"
       } else {
         timerEl.textContent = '';
         clearInterval(timeInterval);
@@ -67,60 +73,43 @@ to_q_1.addEventListener( 'click', () => {
     }, 1000);
 }); 
 
+
+//Event listeners for navigating the quiz
 to_q_1.addEventListener("click", () => {
-if(question1.style.display === 'none') {
     question1.style.display = 'flex';
     info.style.display = 'none';
-} else {
-    question1.style.display = 'none';
-}
 });
-
 to_q_2.addEventListener("click", () => {
-if(question2.style.display === 'none') {
     question2.style.display = 'flex';
     question1.style.display = 'none';
-} else {
-    question2.style.display = 'none';
-}
 });
-
 to_q_3.addEventListener("click", () => {
-if(question3.style.display === 'none') {
     question3.style.display = 'flex';
     question2.style.display = 'none';
-} else {
-    question3.style.display = 'none';
-}
 });
-
 to_q_4.addEventListener("click", () => {
-if(question4.style.display === 'none') {
     question4.style.display = 'flex';
     question3.style.display = 'none';
-} else {
-    question4.style.display = 'none';
-}
 });
-
 to_q_5.addEventListener("click", () => {
-if(question5.style.display === 'none') {
     question5.style.display = 'flex';
     question4.style.display = 'none';
-} else {
-    question5.style.display = 'none';
-}
 });
-
 finishquiz.addEventListener("click", () => {
-if(quiz_end.style.display === 'none') {
     quiz_end.style.display = 'flex';
     question5.style.display = 'none';
-} else {
-    quiz_end.style.display = 'none';
-}
+    setScoreText()
 });
 
+// Function to reload page on "try again" and on "quit"
+function reload() {
+    reload = location.reload();
+}
+try_again.addEventListener("click", reload, false);
+
+quit.forEach(function(quit) {
+    quit.addEventListener('click', reload, false)
+});
 
 
   

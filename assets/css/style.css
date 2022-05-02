@@ -11,11 +11,16 @@ body {
     background-color: rgb(159, 214, 159);
 }
 
-.start-quiz {
+.start-quiz,
+.try-again {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.try-again {
+    display: none;
 }
 
 .start-quiz button {
@@ -28,13 +33,29 @@ body {
     cursor: pointer;
 }
 
+.try-again button {
+    font-size: 30px;
+    font-weight: 500;
+    color:rgb(26, 118, 26);
+    padding: 70px 90px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .start-quiz button:hover {
     background-color: rgb(16, 67, 16);
     color: rgb(159, 214, 159);
     transition: 150ms;
 }
 
-.cont-btn, .quit-btn {
+.try-again button:hover {
+    background-color: rgb(16, 67, 16);
+    color: rgb(159, 214, 159);
+    transition: 150ms;
+}
+
+.cont-btn, .quit {
     color:rgb(26, 118, 26);
     border: none;
     padding: 4px 8px;
@@ -51,7 +72,7 @@ body {
     transition: 150ms;
 }
 
-.quit-btn:hover {
+.quit:hover {
     color:rgb(159, 214, 159);
     background-color: rgb(26, 118, 26);
     transition: 150ms;
@@ -65,7 +86,8 @@ body {
 }
 
 .questions,
-.quiz-end {
+.quiz-end,
+.enter-score {
     height: 100vh;
     z-index: 5;
     display: none;
@@ -75,7 +97,8 @@ body {
 
 .info-box,
 .questions-box, 
-.end-box {
+.end-box,
+.score-box {
     text-align: center;
     width: 900px;
     background-color: rgb(226, 226, 226);

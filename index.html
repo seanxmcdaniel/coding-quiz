@@ -31,7 +31,7 @@
                 <li> Complete the quiz and compare your score! </li>
             </ol>
             <button class="cont-btn" id="to-q-1"> Continue </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
@@ -45,7 +45,7 @@
                 <button class="wrong"> Numbers </button>
             </ul>
             <button class="cont-btn" id="to-q-2"> Next Question </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
                 <button class="wrong"> Square Brackets </button>
             </ul>
             <button class="cont-btn" id="to-q-3"> Next Question </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
@@ -73,7 +73,7 @@
                 <button class="correct"> All of the Above </button>
             </ul>
             <button class="cont-btn" id="to-q-4"> Next Question </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
@@ -87,7 +87,7 @@
                 <button class="wrong"> for loops </button>
             </ul>
             <button class="cont-btn"id="to-q-5"> Next Question </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
@@ -101,17 +101,30 @@
                 <button class="wrong"> Parentheses </button>
             </ul>
             <button class="cont-btn" id="finish-quiz"> Finish Quiz </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
     </div>
 
     <div class="quiz-end">
         <div class="end-box">
             <div class="title">You have completed the Coding Quiz!</div>
-            <div class="score">You got <p>5</p> out of <p>5</p></div>
+            <div class="score">You got <p id="score"></p> out of <p>5</p></div>
             <button class="cont-btn" id="save-score"> Save Score </button>
-            <button class="quit-btn"> Quit </button>
+            <button class="quit"> Quit </button>
         </div>
+    </div>
+
+    <div class="enter-score">
+        <div class="score-box">
+            <div class="title">Save your score</div>
+            <input class="score-input" type="text" placeholder="Initials here"/>
+            <button class="cont-btn"> Save Score </button>
+            <button class="quit"> Quit </button>
+        </div>
+    </div>
+
+    <div class="try-again">
+        <button id="try again"> Time's Up! Try Again. </button>
     </div>
 
     <script src="./assets/js/script.js"></script>
